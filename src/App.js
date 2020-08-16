@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { input: "", list: [], list_1: [], locationSelected: null };
-    this.fetchCountryFromJson_1();
   }
 
   ////////////////////////////////////////////////////////////////
@@ -20,7 +19,7 @@ class App extends Component {
 
   async autocompleteFetchAPI(queryString) {
     const apiCall = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${queryString}&APPID=a521f0aa99ef371340547b3d5c2a1833&lang=vi&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${queryString}&APPID=a521f0aa99ef371340547b3d5c2a1833&lang=vi&units=metric`
     );
     console.log(apiCall);
     this.setState({ locationSelected: apiCall });
@@ -40,11 +39,6 @@ class App extends Component {
     this.setState({ list: matches });
   }
 
-  async fetchCountryFromJson_1() {
-    const { data } = await axios.get("city_list.json");
-    console.log(data);
-    this.setState({ list_1: data });
-  }
   /////////////////////////////////////////////////////////////////////////////////////////
   render() {
     const weatherWidget = () => {
