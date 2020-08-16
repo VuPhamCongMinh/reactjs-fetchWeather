@@ -20,7 +20,7 @@ class App extends Component {
 
   async autocompleteFetchAPI(queryString) {
     const apiCall = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${queryString}&APPID=a521f0aa99ef371340547b3d5c2a1833&lang=vi&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${queryString}&APPID=a521f0aa99ef371340547b3d5c2a1833&lang=vi&units=metric`
     );
     console.log(apiCall);
     this.setState({ locationSelected: apiCall });
