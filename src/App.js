@@ -109,7 +109,7 @@ class App extends Component {
           <input
             type="text"
             className="search-input"
-            placeholder="Enter state of America"
+            placeholder="Nhập địa điểm (ở việt nam thôi nghen)"
             onChange={(e) => (
               this.alertKeyPressed(e), this.fetchCountryFromJson()
             )}
